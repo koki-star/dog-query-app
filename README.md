@@ -1,10 +1,10 @@
 # Dog Query App
 
-A small React app that uses the Dog API with TanStack Query.
+College assignment (Application Development, North Seattle College). A React app that browses dog breeds from the Dog API using TanStack Query. You can search the breed list, open one breed for details, and see dog facts and groups on the same page.
 
-This project lets you browse dog breeds, open details for a selected breed, and view extra dog facts and groups in one place. It focuses on clear loading, success, empty, and error states so the data flow is easy to follow.
+The point of the assignment was handling request states, so the app shows loading, success, empty, and error states clearly.
 
-## Run
+## Run it
 
 Install dependencies:
 
@@ -30,24 +30,21 @@ Preview the production build locally:
 npm run preview
 ```
 
-## About
+## Built with
 
-- Built with React and Vite
-- Uses TanStack Query for API requests and query state
-- Fetches data from the Dog API
-- Includes a small test cases section for normal and edge case states
+- React and Vite
+- TanStack Query for API requests and caching
+- Dog API (https://dogapi.dog), no API key needed
 
 ## Features
 
-- Breeds list from `/breeds`
-- Breed detail from `/breeds/{id}`
-- Dog facts from `/facts`
-- Dog groups from `/groups`
-- Loading, error, and success states
-- Search filter for the breeds list
-- Test cases section with normal and edge case states
+- Breed list from `/breeds` with a search filter
+- Breed details from `/breeds/{id}`
+- Dog facts from `/facts` and groups from `/groups`
+- Loading, empty, and error states for each request
+- A test cases section in the interface that triggers those states by hand, including a deliberate bad request
 
-## Project Structure
+## Project structure
 
 ```text
 dog-query-app/
