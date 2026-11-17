@@ -2,9 +2,13 @@
 
 College assignment (Application Development, North Seattle College). A React app that browses dog breeds from the Dog API using TanStack Query. You can search the breed list, open one breed for details, and see dog facts and groups on the same page.
 
+Live demo: https://koki-star.github.io/dog-query-app/
+
 The point of the assignment was handling request states, so the app shows loading, success, empty, and error states clearly.
 
 ## Run it
+
+The app is served from `/dog-query-app/` (set in `vite.config.js`), so the local dev server opens at `http://localhost:5173/dog-query-app/`.
 
 Install dependencies:
 
@@ -38,7 +42,7 @@ npm run preview
 
 ## Features
 
-- Breed list from `/breeds` with a search filter
+- Full breed list from `/breeds` (all pages are loaded) with a search filter
 - Breed details from `/breeds/{id}`
 - Dog facts from `/facts` and groups from `/groups`
 - Loading, empty, and error states for each request

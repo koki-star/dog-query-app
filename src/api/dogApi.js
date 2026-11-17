@@ -10,9 +10,16 @@ async function request(path) {
   return response.json();
 }
 
+// The API sends breeds in pages, so this loads every page and joins them.
 export async function fetchBreeds() {
-  const json = await request('/breeds');
-  return json.data ?? [];
+  const first = await request('/breeds?page[size]=100');
+  const lastPage = first.meta?.pagination?.last ?? 1;
+  const others = await Promise.all(
+    Array.from({ length: lastPage - 1 }, (_, i) =>
+      request(`/breeds?page[size]=100&page[number]=${i + 2}`),
+    ),
+  );
+  return [first, ...others].flatMap((json) => json.data ?? []);
 }
 
 export async function fetchBreedById(id) {
