@@ -16,7 +16,7 @@ export async function fetchBreeds() {
 }
 
 export async function fetchBreedById(id) {
-  const json = await request(`/breeds/${id}`);
+  const json = await request(`/breeds/${encodeURIComponent(id)}`);
   return json.data ?? null;
 }
 
